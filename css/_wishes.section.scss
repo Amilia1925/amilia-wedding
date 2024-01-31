@@ -1,0 +1,102 @@
+.wishes-section {
+	position: relative;
+	padding: 5rem 0 0;
+	@include max-md {
+		padding: 3rem 0 0;
+		.row {
+			gap: 2rem;
+		}
+	}
+
+	.card-form {
+		margin-bottom: 0;
+		background-color: var(--color-primary);
+		position: relative;
+		z-index: 3;
+		border-radius: 10px;
+		overflow: hidden;
+		&.card {
+			border: none;
+		}
+		.orn-1,
+		.orn-2 {
+			position: absolute;
+			left: 0;
+			top: 0;
+			height: 100%;
+			@include max-md {
+				heigth: 70%;
+			}
+		}
+		.orn-1 {
+			transform: translate(-40%, 60%);
+		}
+		.orn-2 {
+			right: 0;
+			left: unset;
+			height: 200px;
+			transform: translate(35%, -30%) scaleX(-1);
+			@include max-md {
+				height: 130px;
+			}
+		}
+		.card-body {
+			position: relative;
+			@include min-lg {
+				padding: 3rem;
+			}
+		}
+	}
+
+	.wishes-preview {
+		position: relative;
+		margin-top: 50%;
+		@include max-md {
+			padding: 0;
+			margin-top: 0;
+		}
+		.card {
+			border: none;
+			position: relative;
+			background-color: transparent;
+			border-radius: 10px;
+			&::before {
+				position: absolute;
+				content: "";
+				top: 0;
+				right: 0;
+				bottom: 0;
+				left: 0;
+				background-color: var(--color-secondary);
+				opacity: 0.25;
+				border-radius: 10px;
+			}
+			.card-body {
+				overflow: hidden;
+				position: relative;
+				z-index: 10;
+				.wishes {
+					text-align: left;
+					height: 25.05rem;
+					overflow: auto;
+					&::-webkit-scrollbar {
+						display: none;
+					}
+					// .text-muted {
+					// 	color: rgba($color: #fff, $alpha: 0.8) !important;
+					// }
+					.wish {
+						margin-bottom: 1.5rem;
+						h6 {
+							font-weight: bold;
+						}
+						h6,
+						p {
+							margin-bottom: 0;
+						}
+					}
+				}
+			}
+		}
+	}
+}
